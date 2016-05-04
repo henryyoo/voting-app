@@ -31,12 +31,12 @@ describe('reducers', ()=>{
   });
 
   it ('handles VOTE', () => {
-    const action = {type:'VOTE', entries: 'first'};
+    const action = {type:'VOTE', entry: 'first'};
     const initialState = Map({
       vote: Map({
         pair:List.of('first','second')
       }),
-      entries: List()
+      entry: List()
     });
 
     const nextState = reducer(initialState,action);
@@ -48,7 +48,7 @@ describe('reducers', ()=>{
           'first': 1
         })
       }),
-      entries: List()
+      entry: List()
     }));
 
   });
@@ -66,7 +66,7 @@ describe('reducers', ()=>{
     const actions = [
       {type : "SET_ENTRIES", entries: ['first','second']},
       {type: "NEXT"},
-      {type: "VOTE", entries: "first"},
+      {type: "VOTE", entry: "first"},
       {type: "NEXT"}
     ]
 
